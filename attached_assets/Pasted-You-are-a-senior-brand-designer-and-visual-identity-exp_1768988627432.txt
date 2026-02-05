@@ -1,0 +1,143 @@
+You are a senior brand designer and visual identity expert specialized in Saudi and GCC SaaS startups.
+
+I already have a fully built SaaS website with all pages completed.
+
+I do NOT want to rebuild the website or rewrite the content.
+
+My only request is to define and design the brand identity and logo for the project in a way that strongly reflects Saudi identity, while remaining modern, premium, and technology-driven.
+
+Brand Information
+
+Brand name: Wazifly
+
+Product type: B2B SaaS
+
+Industry: AI Employees / Action-Taking AI Agents
+
+Target market: Saudi Arabia (primary), GCC (secondary)
+
+Audience: Saudi eCommerce merchants (Salla & Zid)
+
+Brand Concept
+
+Wazifly represents digital employees that work on behalf of Saudi merchants.
+
+The brand should communicate:
+
+Trust
+
+Control
+
+Intelligence
+
+Reliability
+
+Local Saudi understanding
+
+Avoid anything playful, childish, or generic.
+
+LOGO REQUIREMENTS
+
+Design a professional SaaS logo for Wazifly with the following rules:
+
+Logo Style
+
+Modern
+
+Clean
+
+Premium
+
+Suitable for enterprise SaaS
+
+Saudi Identity Guidelines (VERY IMPORTANT)
+
+The logo must subtly reflect Saudi identity without clichés.
+
+Acceptable inspirations:
+
+Geometric patterns inspired by Saudi architecture
+
+Subtle Arabic calligraphy influence (not direct Arabic letters unless very abstract)
+
+Concepts of:
+
+Authority
+
+Leadership
+
+Structure
+
+Reliability
+
+Avoid:
+
+Flags
+
+Traditional costumes
+
+Literal symbols (camel, sword, palm tree)
+
+The Saudi identity should feel implicit, refined, and intelligent, not obvious.
+
+Color Palette Direction
+
+Propose a color system that works well for SaaS dashboards:
+
+Primary colors inspired by:
+
+Deep green (Saudi heritage)
+
+Dark navy or charcoal
+
+Accent color for actions (approvals, execution)
+
+The colors must feel:
+
+Trustworthy
+
+Executive
+
+Calm
+
+Typography Direction
+
+Modern sans-serif font
+
+Works well in English
+
+Feels professional and readable for dashboards
+
+Brand Output Required
+
+Provide:
+
+Logo concept description (symbol + wordmark)
+
+Meaning behind the logo
+
+Color palette with usage explanation
+
+Typography recommendation
+
+Short brand tagline options (2–3 lines max)
+
+Important Constraints
+
+Do NOT redesign the website layout
+
+Do NOT rewrite page content
+
+Focus only on brand identity and logo system
+
+The logo must work on:
+
+Website header
+
+Dashboard
+
+Mobile
+
+Favicon
+
+Deliver the result as a ready-to-use brand direction for a real Saudi SaaS company.

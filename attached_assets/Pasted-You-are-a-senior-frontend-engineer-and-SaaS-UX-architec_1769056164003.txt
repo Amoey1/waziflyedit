@@ -1,0 +1,90 @@
+You are a senior frontend engineer and SaaS UX architect.
+
+I want to update my existing SaaS website (Wazifly) to fully support
+BILINGUAL CONTENT: Arabic and English.
+
+IMPORTANT:
+- Do NOT rebuild the website
+- Do NOT change routes or layout
+- Only extend the current implementation
+
+--------------------------------
+LANGUAGE REQUIREMENTS
+--------------------------------
+
+1) Supported Languages:
+- Arabic (Primary / Default)
+- English (Secondary)
+
+2) Default Language:
+- Arabic must be the default language on first visit
+- Language preference should persist (localStorage or cookie)
+
+3) Language Switcher:
+- Add a clean language toggle in the top navigation
+- Use flags:
+  🇸🇦 Arabic
+  🇬🇧 English
+- The Saudi flag should be visible when Arabic is selected
+
+4) Direction (RTL / LTR):
+- Arabic pages must use RTL layout
+- English pages must use LTR layout
+- Typography, spacing, and alignment must adapt correctly
+
+--------------------------------
+CONTENT HANDLING
+--------------------------------
+
+- Keep the SAME content meaning in both languages
+- Do NOT use literal machine translation
+- Arabic content should sound professional, Saudi, and enterprise-grade
+- English content should remain enterprise SaaS tone
+
+Examples:
+"Autonomous AI Employees. 100% Merchant Control."
+→
+"موظفون أذكياء يعملون ذاتيًا. تحكم كامل للتاجر."
+
+--------------------------------
+TECHNICAL IMPLEMENTATION
+--------------------------------
+
+- Use a simple i18n approach (JSON dictionary or equivalent)
+- Separate text content from components
+- Ensure SEO-friendly structure (lang attributes)
+- Ensure navigation, CTA buttons, and forms switch language correctly
+
+--------------------------------
+VISUAL & BRANDING NOTES
+--------------------------------
+
+- When Arabic is active:
+  - Show Saudi flag 🇸🇦 in the navbar
+  - Maintain Wazifly brand colors
+- Do NOT add political or decorative elements
+- Keep enterprise, clean, and premium look
+
+--------------------------------
+PAGES TO SUPPORT
+--------------------------------
+
+Apply bilingual support to ALL pages:
+- Home
+- AI Employees
+- How it Works
+- Pricing
+- FAQ
+- Dashboard Preview
+- Signup
+
+--------------------------------
+FINAL CHECK
+--------------------------------
+
+- No duplicated pages
+- No broken layouts
+- No mixed languages on the same view
+- Mobile and desktop must work correctly
+
+Deliver a fully bilingual, production-ready implementation.

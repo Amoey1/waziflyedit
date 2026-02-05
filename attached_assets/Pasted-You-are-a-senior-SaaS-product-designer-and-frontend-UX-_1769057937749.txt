@@ -1,0 +1,98 @@
+You are a senior SaaS product designer and frontend UX architect.
+
+I want to visually align my existing SaaS website (Wazifly) with the
+design language and themes commonly used by Salla and Zid platforms,
+WITHOUT copying their UI or violating brand guidelines.
+
+IMPORTANT:
+- Do NOT rebuild the website
+- Do NOT change routes or core layout
+- Only refine theme, spacing, colors, and visual hierarchy
+
+--------------------------------
+GOAL
+--------------------------------
+Make it immediately clear that:
+- Wazifly is built specifically for Salla & Zid merchants
+- The platform feels familiar and trustworthy to existing Salla/Zid users
+- The design feels like a natural extension of their ecosystem
+
+--------------------------------
+DESIGN ALIGNMENT GUIDELINES
+--------------------------------
+
+1) VISUAL STYLE (SIMILAR, NOT IDENTICAL)
+
+Align with Salla & Zid by adopting:
+- Clean, spacious layouts
+- Soft backgrounds with subtle color blocks
+- Rounded cards and containers
+- Calm, professional SaaS color palettes
+- Clear typography hierarchy (Headlines / Body / UI labels)
+
+Avoid:
+- Copying exact colors
+- Replicating UI components
+- Mimicking dashboards or layouts pixel-by-pixel
+
+--------------------------------
+2) COLOR & THEME DIRECTION
+
+- Base theme should remain Wazifly green (Saudi / enterprise identity)
+- Introduce subtle accent hints inspired by:
+  - Salla: soft mint / teal tones
+  - Zid: light purple / lavender tones
+
+Usage:
+- Accents only (icons, dividers, highlights)
+- Never overpower the Wazifly brand
+
+--------------------------------
+3) LOGO & PLATFORM AFFINITY (VERY IMPORTANT)
+
+Add official Salla and Zid logos to the Wazifly website in a
+"platform compatibility" context.
+
+Acceptable placements:
+- A small “Built for” or “Works with” section near the hero
+- A subtle integration strip below the main hero
+- Inside a trust / compatibility section
+
+Rules:
+- Logos must be secondary to Wazifly
+- Use monochrome or softened versions
+- Do NOT place them in the header as primary branding
+- Do NOT imply ownership or partnership
+
+Text examples:
+- “Built specifically for Salla & Zid merchants”
+- “Designed to work natively with Salla and Zid stores”
+
+--------------------------------
+4) UI COMPONENT REFINEMENT
+
+Refine components to feel platform-native:
+- Cards should feel dashboard-like but lightweight
+- Buttons should be confident and calm (not aggressive)
+- Icons should be simple, line-based, enterprise-style
+
+--------------------------------
+5) PAGE COVERAGE
+
+Apply the visual alignment consistently across:
+- Home
+- AI Employees
+- How It Works
+- Pricing
+- FAQ
+- Dashboard Preview
+
+--------------------------------
+FINAL CHECK
+--------------------------------
+The final result should make a Salla or Zid merchant think:
+“This looks familiar. This feels built for my store.”
+
+Do NOT mention competitors negatively.
+Do NOT use marketing hype.
+Focus on clarity, trust, and ecosystem fit.

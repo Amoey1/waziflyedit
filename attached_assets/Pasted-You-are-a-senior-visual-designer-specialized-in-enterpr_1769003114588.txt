@@ -1,0 +1,59 @@
+You are a senior visual designer specialized in enterprise SaaS hero illustrations.
+
+Edit the existing hero image of the Wazifly website with the following requirements.
+Do NOT change the layout, camera angle, or core illustration style.
+
+--------------------------------
+PRIMARY GOAL
+--------------------------------
+Visually reinforce that Wazifly is:
+- Saudi-first
+- Built specifically for Salla & Zid
+- Enterprise-grade and trustworthy
+
+--------------------------------
+REQUIRED VISUAL CHANGES
+--------------------------------
+
+1) SAUDI FLAG INTEGRATION (SUBTLE)
+- Integrate the Saudi flag in a refined, non-dominant way.
+- Do NOT place a large flag or banner.
+- Acceptable approaches:
+  - Soft green Saudi flag glow reflected in the environment
+  - A subtle Saudi green ribbon/light strip integrated into the platform base
+  - A small abstract Saudi flag icon embedded into the central platform structure
+- Avoid:
+  - Waving flags
+  - Nationalistic or political visuals
+  - Anything loud or decorative
+
+The Saudi identity should feel implicit, premium, and architectural.
+
+--------------------------------
+
+2) SALLA & ZID LOGOS (ENTERPRISE STYLE)
+- Add the official Salla and Zid logos near the platform area.
+- Placement options:
+  - On the side panels of the central eCommerce platform
+  - As small illuminated badges connected via data lines
+- Logos must:
+  - Be monochrome or softly tinted
+  - Match the color harmony of the illustration
+  - Look like system integrations, not advertisements
+
+--------------------------------
+
+3) STYLE & CONSISTENCY RULES
+- Maintain the current 3D, modern, enterprise SaaS illustration style
+- Keep lighting soft and professional
+- Do not overcrowd the image
+- Ensure the image still feels suitable for a B2B enterprise homepage
+
+--------------------------------
+FINAL CHECK
+--------------------------------
+The final image should communicate, at a glance:
+“This is a Saudi-built, enterprise AI platform deeply integrated with Salla and Zid.”
+
+Do not add any text to the image.
+Do not change existing UI labels or characters.

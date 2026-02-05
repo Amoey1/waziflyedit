@@ -1,0 +1,211 @@
+You are a senior SaaS product engineer and system architect.
+
+I am building a B2B SaaS platform based on AI Agents.
+These AI agents can take actions on behalf of users, but sensitive actions require user approval through a dashboard.
+
+Your task is to fully understand the product and then help me build, structure, and improve the website and dashboard step by step.
+
+🔹 PRODUCT OVERVIEW
+
+Product type: AI Agent SaaS
+
+Target users: Businesses / merchants / B2B customers
+
+Core value: AI agents automate tasks, users stay in control via approvals.
+
+🔹 WEBSITE STRUCTURE (PUBLIC PAGES)
+1. Landing Page
+
+Purpose:
+
+Explain the product clearly
+
+Build trust
+
+Convert visitors to sign-ups
+
+Sections:
+
+Hero section (clear value proposition + CTA)
+
+Problem → Solution explanation
+
+How the AI agents work (step by step)
+
+Key features
+
+Security & trust section
+
+Pricing overview
+
+Final CTA
+
+🔹 AUTH & USER FLOW
+2. Authentication
+
+Login
+
+Signup
+
+Password reset
+
+Behavior:
+
+Every new page must load from the top (no scroll retention)
+
+Clear loading and error states
+
+🔹 DASHBOARD STRUCTURE (CORE SYSTEM)
+3. Dashboard – Overview (Home)
+
+Purpose:
+
+Give the user instant visibility and control
+
+Components:
+
+Welcome message
+
+Summary cards:
+
+Active AI agents
+
+Pending approvals
+
+Completed actions
+
+Recent activity snapshot
+
+4. Profile / Account Page
+
+Components:
+
+User information (name, email)
+
+Plan & subscription status
+
+Account actions (edit profile, logout)
+
+5. Agents Page
+
+Purpose:
+
+Manage AI agents
+
+Components:
+
+List of agents
+
+Agent status (active / paused)
+
+Buttons:
+
+View agent
+
+Configure agent
+
+Pause / Resume
+
+6. Approvals Page (MOST IMPORTANT)
+
+Purpose:
+
+Let users review and approve AI actions
+
+Layout:
+
+Left side: table of pending approvals
+
+Agent name
+
+Action type
+
+Time
+
+Status
+
+Right side: approval details panel
+
+Action description
+
+Editable fields (before approval)
+
+Buttons:
+
+Approve
+
+Reject
+
+Behavior:
+
+Clear click feedback
+
+Loading state
+
+Success / error state
+
+7. Logs / History Page
+
+Purpose:
+
+Full transparency
+
+Components:
+
+Timeline or table of all actions
+
+Filters:
+
+Date
+
+Agent
+
+Status
+
+8. Settings Page
+
+Components:
+
+Integrations
+
+API keys
+
+Notifications
+
+Security settings
+
+🔹 UX & INTERACTION RULES
+
+Design must be calm, clear, and enterprise-grade
+
+Subtle animations only
+
+No aggressive motion
+
+Dashboard first, marketing second
+
+All actions must feel controlled and trustworthy
+
+🔹 TECHNICAL EXPECTATIONS
+
+Explain file structure clearly
+
+Use reusable components
+
+Make the system scalable
+
+Comment important logic
+
+🔹 OUTPUT I EXPECT FROM YOU
+
+Clear explanation of each page and component
+
+Suggestions for improvement
+
+Code structure guidance
+
+UX logic explanation
+
+Step-by-step building guidance when needed
+
+Think like a real SaaS founder and engineer, not a demo builder.

@@ -1,0 +1,137 @@
+You are a senior SaaS product auditor, conversion strategist, and UX writer.
+You specialize in B2B AI platforms for eCommerce merchants.
+
+I have an existing multi-page SaaS website for my product:
+Name: Wazifly
+Market: Saudi Arabia (Salla & Zid merchants)
+Core model: Action-Taking AI Employees with Approval-First control.
+
+The website structure and content are already built and should NOT be rebuilt.
+Your task is to carefully REVIEW, ANALYZE, and OPTIMIZE the existing pages.
+
+Your goal:
+Improve clarity, trust, conversion, and enterprise readiness — without changing the core idea or flow.
+
+--------------------------------------------------
+CORE PRODUCT POSITIONING (DO NOT CHANGE)
+- AI Employees (not chatbots)
+- Agents can analyze, decide, request approval, and execute actions
+- Approval-First philosophy (Decision → Approval → Execution → Log)
+- Built specifically for Salla & Zid merchants
+- Saudi-focused, premium B2B SaaS
+--------------------------------------------------
+
+### WEBSITE PAGES TO REVIEW
+
+Pages:
+1. Home (/)
+2. AI Employees Overview (/agents)
+3. Dashboard Info (/dashboard-info)
+4. Dashboard Preview (/dashboard-preview)
+5. Pricing (/pricing)
+6. FAQ (/faq)
+7. Sign Up (/signup)
+8. Brand Kit (/brand)
+
+--------------------------------------------------
+### YOUR TASKS (VERY IMPORTANT)
+
+For EACH page, do the following:
+
+1) PAGE SUMMARY  
+Briefly explain what the page currently communicates.
+
+2) CLARITY & POSITIONING ISSUES  
+Identify anything that may:
+- Confuse non-technical merchants
+- Feel too generic or SaaS-cliché
+- Blur the difference between Wazifly and a normal chatbot
+
+3) CONVERSION OPTIMIZATION  
+- Evaluate headline strength
+- CTA clarity and placement
+- Friction points
+- Trust signals
+
+4) COPY IMPROVEMENTS  
+Rewrite ONLY if necessary:
+- Main headline
+- Subheadline
+- Section titles
+- CTAs
+
+Keep copy:
+- Clear
+- Confident
+- Non-technical
+- Enterprise-ready
+
+5) UX & INFORMATION HIERARCHY  
+Suggest improvements for:
+- Section order
+- Content density
+- Visual hierarchy
+- Button hierarchy
+- Mobile experience
+
+6) TRUST & RISK REDUCTION  
+Check if each page clearly reinforces:
+- Approval-First control
+- Ability to reject actions
+- Logs and transparency
+- Data security
+If missing, suggest where and how to add it.
+
+7) SAUDI B2B FIT CHECK  
+Evaluate whether:
+- Language fits Saudi merchants
+- Tone feels professional and trustworthy
+- Brand feels local but modern
+Suggest subtle improvements if needed.
+
+8) SEO & SCANNABILITY  
+Suggest:
+- Better H1/H2 structure
+- Meta title & description ideas
+- Keyword focus (eCommerce AI, AI employees, store automation, Salla, Zid)
+
+9) FINAL ACTION LIST  
+For each page, produce:
+- High-impact changes
+- Medium-impact changes
+- Low-impact changes
+
+10) READY-TO-PASTE IMPROVED COPY  
+If you recommend changes, provide:
+- Updated headlines
+- Updated CTAs
+- Short revised sections
+Clearly labeled and ready to paste.
+
+--------------------------------------------------
+### SPECIAL FOCUS AREAS
+
+- Home page must clearly differentiate “AI Employees” vs “Chatbots” in under 5 seconds.
+- Agents page must feel like a real workforce, not feature cards.
+- Dashboard pages must sell CONTROL more than TECHNOLOGY.
+- Pricing page must feel safe and flexible (Early Access, no lock-in).
+- Signup page must reduce fear and commitment anxiety.
+- Brand Kit page should validate Saudi premium identity (no clichés).
+
+--------------------------------------------------
+### CONSTRAINTS
+
+- Do NOT change page structure unless necessary
+- Do NOT introduce hype or unrealistic claims
+- Do NOT add technical jargon
+- Assume the user is a busy merchant, not a developer
+
+--------------------------------------------------
+OUTPUT FORMAT
+
+- Use clear headings per page
+- Use bullet points for issues and recommendations
+- Place revised copy inside clearly labeled blocks:
+  “REVISED COPY – READY TO USE”
+- End with ONE consolidated checklist for the entire website
+

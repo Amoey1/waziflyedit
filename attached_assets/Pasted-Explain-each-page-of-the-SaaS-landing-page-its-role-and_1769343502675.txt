@@ -1,0 +1,125 @@
+Explain each page of the SaaS landing page, its role, and what information it communicates.
+
+🟢 Home Page
+
+Purpose of the page
+
+Main value proposition
+
+What the hero section explains
+
+How the product is introduced in simple terms
+
+What problem is highlighted first
+
+What action the user is encouraged to take
+
+🟢 Features / How It Works
+
+Explanation of core features (high-level, non-technical)
+
+How the system monitors store activity
+
+How it analyzes data (orders, customers, products, competitors)
+
+How it suggests actions
+
+How merchant approval works before execution
+
+🟢 Use Cases (For Salla & Zid Merchants)
+
+Realistic scenarios:
+
+Customer support automation
+
+Sales optimization
+
+Daily operational decisions
+
+What happens before and after using the platform
+
+🟢 Why This Platform (Value & Differentiation)
+
+Why this SaaS is built specifically for Salla & Zid
+
+What makes it different from:
+
+Normal automation tools
+
+Traditional chatbots
+
+Manual merchant work
+
+Emphasis on control, approval, and trust
+
+🟢 Trust & Reliability
+
+How the website builds trust
+
+Data privacy and merchant control
+
+Human-in-the-loop concept
+
+No actions without merchant approval
+
+🟢 Pricing / Plans (Conceptual Explanation)
+
+What pricing is based on (usage, agents, features)
+
+Why pricing makes sense for merchants
+
+Who each plan is suitable for (small vs growing stores)
+
+🟢 Call to Action
+
+What the website ultimately wants the visitor to do
+
+Why the CTA is low-friction
+
+How it fits merchant psychology
+
+4️⃣ User Journey (From Visit to Trust)
+
+Explain step-by-step:
+
+What a merchant thinks when landing on the site
+
+How their understanding evolves while scrolling
+
+When trust is built
+
+When curiosity turns into intention
+
+5️⃣ Overall Website Philosophy
+
+The mindset behind the website
+
+Why clarity is prioritized over hype
+
+Why the language is simple and practical
+
+How the website speaks like a business partner, not a tech company
+
+6️⃣ Summary
+
+Provide a concise summary that:
+
+Explains what this website represents
+
+Why it exists
+
+How it positions the SaaS in the merchant’s mind
+
+Important Rules:
+
+Do NOT write code
+
+Do NOT design UI
+
+Do NOT use marketing fluff
+
+Use clear, structured, explanatory language
+
+Assume the reader is a founder or developer trying to understand the product deeply
+
+Deliver a complete, detailed explanation as if this document will be used as the single source of truth for understanding the website.

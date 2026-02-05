@@ -1,0 +1,119 @@
+Wazifly — Enterprise Pitch (Website-Aligned)
+One-Line Pitch
+
+Wazifly provides autonomous AI employees that execute real store actions—only after merchant approval—giving enterprises full control, speed, and operational confidence.
+
+The Problem (Enterprise Reality)
+
+Growing eCommerce teams face:
+
+High operational load across support, sales, and fulfillment
+
+Slow decision cycles due to manual approvals and fragmented tools
+
+Risk exposure from uncontrolled automation or “black-box” AI
+
+Limited visibility into who did what, when, and why
+
+Enterprises don’t need more chatbots.
+They need digital employees they can manage, approve, and audit.
+
+The Solution
+
+Wazifly turns AI into a managed workforce.
+
+Our AI employees:
+
+Analyze real store data
+
+Propose actions with clear business reasoning
+
+Wait for explicit approval before execution
+
+Execute actions inside the store and communication channels
+
+Log every decision for audit and compliance
+
+Decision → Approval → Execution → Log
+
+This is not automation without control.
+This is enterprise-grade AI operations.
+
+The Wazifly AI Workforce
+
+Each agent is specialized, accountable, and measurable:
+
+Sales Agent
+Recovers abandoned carts, recommends products, and proposes retention offers—within merchant-defined limits.
+
+Support Agent
+Resolves order status, returns, and FAQs autonomously, escalating sensitive cases for approval.
+
+Marketing Agent
+Generates campaigns, content, and outreach plans—executed only after review.
+
+Operations Agent
+Monitors inventory, fulfillment risks, and restocking thresholds before taking action.
+
+Analytics Agent
+Delivers executive-ready insights, forecasts, and recommendations tied to real actions.
+
+Together, they operate as a coordinated digital team.
+
+Control & Governance (Why Enterprises Trust Wazifly)
+
+Approval-First by design
+No refunds, discounts, restocks, or sensitive actions without human approval.
+
+Full audit trail
+Every action is logged with context, reason, approver, and outcome.
+
+Risk awareness
+Actions are categorized by risk level to guide fast, confident decisions.
+
+Instant override
+Pause agents, reject actions, or modify rules at any time.
+
+You remain the manager.
+Wazifly remains the workforce.
+
+Built for Saudi Commerce
+
+Native support for Salla & Zid
+
+Arabic (Khaleeji), formal Arabic, and English communication
+
+Saudi-ready operational mindset and enterprise expectations
+
+This is not a global generic tool adapted later.
+Wazifly is built for Saudi merchants from day one.
+
+Enterprise Value
+
+Reduce operational workload without adding headcount
+
+Increase speed of execution while preserving control
+
+Minimize risk from uncontrolled automation
+
+Gain visibility across decisions, actions, and outcomes
+
+AI that works.
+Control that scales.
+
+Call to Action (Enterprise)
+
+Request Enterprise Access
+Deploy AI employees with approval-first governance and full transparency.
+
+No credit card required. Early access pricing available.
+
+Internal Note for the Tool / Editor
+
+Do not simplify this into chatbot language
+
+Keep enterprise tone: confident, controlled, accountable
+
+Emphasize governance, approvals, and auditability
+
+This pitch should reinforce trust, not excitement hype

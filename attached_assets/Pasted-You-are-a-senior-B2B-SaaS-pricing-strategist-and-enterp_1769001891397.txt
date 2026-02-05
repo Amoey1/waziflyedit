@@ -1,0 +1,116 @@
+You are a senior B2B SaaS pricing strategist and enterprise UX copywriter.
+
+I want you to redesign and rewrite the EXISTING Pricing page of my SaaS product
+without changing the overall site structure or navigation.
+
+Product name: Wazifly  
+Positioning: Enterprise-grade AI Employees with Approval-First governance  
+Market: Saudi Arabia (Salla & Zid merchants)  
+Audience: Mid-market & Enterprise merchants  
+
+The current pricing page feels too simple.
+I want it to feel like a serious enterprise platform.
+
+---------------------------------------
+PRICING PAGE GOALS
+---------------------------------------
+- Communicate enterprise value, not cheap pricing
+- Reduce pricing anxiety
+- Emphasize governance, control, security, and scale
+- Make “Custom pricing” feel premium and intentional
+- Guide users toward “Request Enterprise Access”
+
+---------------------------------------
+REQUIRED IMPROVEMENTS
+---------------------------------------
+
+1) PRICING PAGE STRUCTURE (KEEP ONE PLAN, BUT ADD DEPTH)
+
+Do NOT add multiple pricing tiers.
+Keep a single Enterprise plan, but enhance the page with sections:
+
+- Enterprise Value Overview
+- What Pricing Is Based On
+- What’s Included (expanded)
+- Governance & Control
+- Security & Compliance
+- Who This Is For / Who It’s Not For
+- Call to Action
+
+---------------------------------------
+2) HERO SECTION (PRICING)
+
+Rewrite the pricing hero to feel executive-level.
+
+Example direction (not mandatory wording):
+- Headline focused on value and scale, not price
+- Subheadline explaining that pricing adapts to usage, risk, and automation level
+
+---------------------------------------
+3) “WHAT PRICING IS BASED ON” SECTION (VERY IMPORTANT)
+
+Add a section explaining pricing logic clearly, such as:
+- Number of AI employees activated
+- Volume of executed actions (not chats)
+- Level of approval & governance
+- Integrations (Salla, Zid, WhatsApp)
+- Support & SLA requirements
+
+This section should reduce uncertainty and build trust.
+
+---------------------------------------
+4) EXPAND THE ENTERPRISE PLAN CARD
+
+Improve the existing Enterprise plan card by:
+- Adding a short “Who this is for” description
+- Highlighting governance-first benefits
+- Making “Custom / month” feel premium, not vague
+
+---------------------------------------
+5) GOVERNANCE & RISK CONTROL SECTION
+
+Add a dedicated section explaining:
+- Approval-first execution
+- Risk-level classification (High / Medium actions)
+- Full audit trails
+- Manual override & kill-switch
+
+This section should make enterprises feel safe.
+
+---------------------------------------
+6) SECURITY & COMPLIANCE
+
+Add a section covering:
+- Data encryption
+- Role-based access
+- Logs & accountability
+- Saudi-market readiness
+
+Do NOT use buzzwords. Keep it clear and credible.
+
+---------------------------------------
+7) CALL TO ACTION (FINAL)
+
+The primary CTA should remain:
+“Request Enterprise Access”
+
+Add microcopy that reassures:
+- No credit card required
+- Early access / custom onboarding
+- Sales-assisted setup
+
+---------------------------------------
+IMPORTANT CONSTRAINTS
+---------------------------------------
+- Do NOT add exact prices
+- Do NOT downgrade to SMB language
+- Do NOT sound like a marketing landing page
+- Keep the tone calm, confident, and executive
+- Assume the reader manages a serious business
+
+---------------------------------------
+OUTPUT FORMAT
+---------------------------------------
+- Provide full revised pricing page copy
+- Use clear section headings
+- Text must be ready to paste into production

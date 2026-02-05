@@ -1,0 +1,187 @@
+You are a senior SaaS product marketer and UX copywriter specialized in AI-powered eCommerce platforms.
+
+Design a complete multi-page website for a new SaaS product that serves eCommerce merchants on Salla and Zid (Saudi Arabia) by providing Action-Taking AI Agents that work like real employees.
+
+The AI agents are able to analyze situations, propose decisions, request merchant approval, and then execute real actions inside the store and communication channels.
+
+Product Information
+
+Product name: Opero AI
+
+Product type: SaaS (subscription-based)
+
+Market: Saudi Arabia (scalable to GCC)
+
+Target users: Salla & Zid merchants (non-technical, business-focused)
+
+Language: English
+
+Tone: Professional, clear, confident, human, non-technical
+
+Core Value Proposition
+
+Opero AI provides AI Employees that manage daily store operations such as sales, customer support, marketing, operations, and analytics.
+
+These AI employees do not act blindly.
+Every sensitive action follows this model:
+Decision → Approval → Execution → Log
+
+Merchants stay fully in control while saving time and increasing revenue.
+
+REQUIRED PAGES
+
+Design the following pages with clear structure, headings, and ready-to-use copy.
+
+PAGE 1: Landing Page (Home)
+1. Hero Section
+
+Strong headline explaining the product in one sentence
+
+Subheadline explaining the value in simple words
+
+Primary CTA: Request Demo or Join the Waitlist
+
+2. The Problem
+
+Explain the daily pain points of Salla & Zid merchants:
+
+Constant customer messages
+
+Order and shipping follow-ups
+
+Repetitive operational decisions
+
+No time to focus on growth
+
+3. The Solution: Opero AI
+
+Explain how Opero AI turns AI into real digital employees, not chatbots.
+
+4. AI Employees (Agents)
+
+Create a section explaining each agent briefly:
+
+Sales Agent – converts conversations into sales
+
+Support Agent – resolves customer issues automatically
+
+Marketing Agent – creates and executes campaigns
+
+Operations Agent – manages orders and inventory workflows
+
+Analytics Agent – delivers insights and smart recommendations
+
+5. How It Works
+
+Step-by-step explanation:
+
+Customer interacts
+
+AI agent analyzes and decides
+
+Merchant approves the action
+
+Action is executed automatically
+
+6. Why Opero AI
+
+Action-taking, not just chat
+
+Full merchant control
+
+Built specifically for Salla & Zid
+
+Secure and transparent
+
+7. Security & Control
+
+Approval-first system
+
+Full activity logs
+
+Ability to stop or modify any action
+
+8. CTA Section
+
+Clear call to action
+
+Simple form: Store name, platform (Salla/Zid), contact info
+
+PAGE 2: AI Employees (Agents Overview)
+
+A dedicated page explaining:
+
+What AI employees are
+
+How they replace repetitive daily work
+
+Difference between chatbots and action-taking agents
+
+Real examples of actions they execute after approval
+
+PAGE 3: How the Dashboard Works
+
+Explain the Merchant Dashboard clearly:
+
+View pending approvals
+
+Approve, reject, or edit actions
+
+Track executed actions
+
+Monitor performance and reports
+
+This page should naturally lead the user to understand what happens after login.
+
+PAGE 4: Dashboard (Preview / Explanation Page)
+
+Design a page that acts as a bridge to the actual Dashboard, explaining:
+
+Approval Center
+
+Activity Logs
+
+Agent Performance
+
+Integrations (Salla, Zid, WhatsApp)
+
+Include CTA:
+“Access Your Dashboard” or “Request Dashboard Access”
+
+PAGE 5: Pricing (Coming Soon)
+
+Explain that pricing is based on:
+
+Number of AI employees
+
+Volume of executed actions
+
+Level of automation
+
+Add “Request Pricing” CTA
+
+PAGE 6: FAQ
+
+Include questions such as:
+
+Do AI agents act without my permission?
+
+Is my store data secure?
+
+Can I stop the AI at any time?
+
+Is this built only for Salla & Zid?
+
+IMPORTANT GUIDELINES
+
+Avoid technical jargon
+
+Avoid hype or exaggerated marketing claims
+
+Focus on real business value and time savings
+
+Write production-ready copy
+
+Make the dashboard feel like the core product
+
+Deliver the result as fully written website copy, structured by pages and sections, ready to be used directly in a real SaaS website.

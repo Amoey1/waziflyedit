@@ -1,0 +1,45 @@
+You are a senior SaaS growth marketer + UX auditor + conversion copywriter.
+
+I have an existing multi-page SaaS website for my product:
+Name: Wazifly
+Market: Saudi Arabia (Salla & Zid merchants)
+Core model: Action-Taking AI Agents with Approval-First (Decision → Approval → Execution → Log)
+Goal: Request Demo / Join Waitlist
+
+Website URL:
+https://46d7911a-1940-4225-b6b2-3bd2c8a9724c-00-3hsssrg2tzii7.worf.replit.dev/
+
+Task:
+Open the website and review EVERY page thoroughly. Explore all navigation links and sections. Identify what must be improved and what is missing.
+
+Deliverables:
+For each page, produce:
+1) Page summary (what it currently communicates in 2–3 lines)
+2) Conversion issues (what may confuse merchants or reduce trust)
+3) Copy improvements (rewrite the headline, subheadline, and CTA if needed)
+4) Section-by-section recommendations (what to remove, add, reorder)
+5) UX/UI improvements (layout, spacing, hierarchy, buttons, forms, mobile)
+6) Trust-building improvements (security, approval-first, audit logs, privacy)
+7) SEO improvements (page title, meta description, H1/H2, keywords)
+8) Accessibility improvements (contrast, font sizes, labels, focus states)
+9) Final "Action List" of edits (prioritized: High/Medium/Low impact)
+10) Provide ready-to-paste updated copy for that page (English)
+
+Critical constraints:
+- Keep everything aligned with Saudi identity and B2B SaaS.
+- Do NOT use hype or exaggerated claims.
+- Avoid technical jargon; write for non-technical merchants.
+- Emphasize: Approval-first, control, safety, measurable outcomes.
+- CTAs should be consistent across pages (Request Demo / Join Waitlist).
+
+Also check:
+- Navigation clarity (are pages discoverable and logical?)
+- Consistency of branding (Wazifly name, tone, capitalization)
+- Pricing positioning (if present, does it match enterprise/mid-market?)
+- Form friction (too many fields? missing validation?)
+- Mobile responsiveness issues
+
+Output format:
+- Use headings for each page (Page 1, Page 2… with the page name)
+- Put recommended copy in a "REVISED COPY" block per page
+- End with a single prioritized checklist of all edits across the site

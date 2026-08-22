@@ -12,39 +12,47 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Patch Marwa page
+      - name: Switch to the new Marwa song
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          p=Path('marwa.html')
-          s=p.read_text(encoding='utf-8')
+          import re
 
-          # Remove only the word requested from the opening chip
-          s=s.replace('رحلة خاصة جدًا • لمروى فقط 🤍','رحلة خاصة جدًا • لمروى 🤍',1)
+          p = Path('marwa.html')
+          s = p.read_text(encoding='utf-8')
 
-          # Keep/add the song download button if it is not there yet
-          if 'downloadSongBtn' not in s:
-              marker='</audio><p id="ph" style="font-size:13px;color:#cdbfc2">اضغطي تشغيل 🎧🤍 وإذا تأخر ثواني فالأغنية قيد التحميل.</p></div><p class="quote"'
-              replacement='</audio><p id="ph" style="font-size:13px;color:#cdbfc2">اضغطي تشغيل 🎧🤍 وإذا تأخر ثواني فالأغنية قيد التحميل.</p></div><button class="btn" id="downloadSongBtn" onclick="downloadSong()" style="margin-top:12px;background:#fff;color:#8c4b5c;box-shadow:inset 0 0 0 1px #ffffff55,0 10px 26px #0002">حمّلي أغنيتك 🎧🤍</button><p style="font-size:12px;color:#cdbfc2;margin-top:8px">عشان تظل معك حتى بعد ما تقفلي الصفحة ✨</p><p class="quote"'
-              if marker in s:
-                  s=s.replace(marker,replacement,1)
-                  js="""const MARWA_SONG_URL='https://raw.githubusercontent.com/Amoey1/waziflyedit/marwa-graduation-2026/%D9%81%D8%B1%D8%AD%D8%A9%20%D8%A7%D9%84%D9%84%D9%8A%D9%84%D8%A9%20%282%29.mp3';async function downloadSong(){const b=$('downloadSongBtn'),old=b.innerHTML;b.disabled=true;b.innerHTML='جاري تجهيز الأغنية… 🎧';try{const r=await fetch(MARWA_SONG_URL,{cache:'no-store'});if(!r.ok)throw new Error();const blob=await r.blob(),u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download='Marwa-Graduation-Song.mp3';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),5000);b.innerHTML='تم تجهيز التحميل 🤍';hearts(7)}catch(e){window.open(MARWA_SONG_URL,'_blank');b.innerHTML='افتحي الأغنية واحفظيها 🤍'}setTimeout(()=>{b.innerHTML=old;b.disabled=false},2600)}"""
-                  anchor='function finish()'
-                  if anchor in s:
-                      s=s.replace(anchor,js+anchor,1)
+          NEW_SONG = 'https://cdn1.suno.ai/52c92fdc-2c8b-4355-9617-537ec09e8f92.mp3'
 
-          p.write_text(s,encoding='utf-8')
+          # Preserve the opening-text correction.
+          s = s.replace('رحلة خاصة جدًا • لمروى فقط 🤍', 'رحلة خاصة جدًا • لمروى 🤍')
+
+          # Replace the previously hosted graduation MP3 everywhere it is used
+          # (audio player source + download URL) with the newly supplied song.
+          s = re.sub(
+              r'https://raw\.githubusercontent\.com/Amoey1/waziflyedit/marwa-graduation-2026/[^\"\'\s<>]+\.mp3',
+              NEW_SONG,
+              s
+          )
+
+          # Extra safety: if a MARWA_SONG_URL constant exists, point it to the new song.
+          s = re.sub(
+              r"const MARWA_SONG_URL='[^']+';",
+              f"const MARWA_SONG_URL='{NEW_SONG}';",
+              s
+          )
+
+          p.write_text(s, encoding='utf-8')
           PY
-      - name: Commit patched page
+      - name: Commit updated song link
         shell: bash
         run: |
           if git diff --quiet -- marwa.html; then
-            echo "No changes needed"
+            echo "Marwa page already uses the new song"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add marwa.html
-          git commit -m "Update Marwa opening text"
+          git commit -m "Replace Marwa graduation song with new version"
           git push origin HEAD:marwa-graduation-2026

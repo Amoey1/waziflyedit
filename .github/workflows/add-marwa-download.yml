@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Switch to latest Marwa song
+      - name: Switch to newest Marwa song
         shell: bash
         run: |
           python - <<'PY'
@@ -21,8 +21,8 @@ jobs:
           p = Path('marwa.html')
           s = p.read_text(encoding='utf-8')
 
-          OLD = 'https://cdn1.suno.ai/52c92fdc-2c8b-4355-9617-537ec09e8f92.mp3'
-          NEW = 'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3'
+          OLD = 'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3'
+          NEW = 'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3'
 
           if OLD not in s and NEW not in s:
               raise SystemExit('Expected song URL not found in marwa.html')
@@ -35,11 +35,11 @@ jobs:
         shell: bash
         run: |
           if git diff --quiet -- marwa.html; then
-            echo "Latest song already active"
+            echo "Newest song already active"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add marwa.html
-          git commit -m "Replace Marwa song with latest uploaded version"
+          git commit -m "Replace Marwa song with newest uploaded version"
           git push origin HEAD:marwa-graduation-2026

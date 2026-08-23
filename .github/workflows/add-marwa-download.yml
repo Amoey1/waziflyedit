@@ -12,47 +12,34 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Switch to the new Marwa song
+      - name: Switch to latest Marwa song
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
 
           p = Path('marwa.html')
           s = p.read_text(encoding='utf-8')
 
-          NEW_SONG = 'https://cdn1.suno.ai/52c92fdc-2c8b-4355-9617-537ec09e8f92.mp3'
+          OLD = 'https://cdn1.suno.ai/52c92fdc-2c8b-4355-9617-537ec09e8f92.mp3'
+          NEW = 'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3'
 
-          # Preserve the opening-text correction.
+          if OLD not in s and NEW not in s:
+              raise SystemExit('Expected song URL not found in marwa.html')
+
+          s = s.replace(OLD, NEW)
           s = s.replace('رحلة خاصة جدًا • لمروى فقط 🤍', 'رحلة خاصة جدًا • لمروى 🤍')
-
-          # Replace the previously hosted graduation MP3 everywhere it is used
-          # (audio player source + download URL) with the newly supplied song.
-          s = re.sub(
-              r'https://raw\.githubusercontent\.com/Amoey1/waziflyedit/marwa-graduation-2026/[^\"\'\s<>]+\.mp3',
-              NEW_SONG,
-              s
-          )
-
-          # Extra safety: if a MARWA_SONG_URL constant exists, point it to the new song.
-          s = re.sub(
-              r"const MARWA_SONG_URL='[^']+';",
-              f"const MARWA_SONG_URL='{NEW_SONG}';",
-              s
-          )
-
           p.write_text(s, encoding='utf-8')
           PY
-      - name: Commit updated song link
+      - name: Commit updated song
         shell: bash
         run: |
           if git diff --quiet -- marwa.html; then
-            echo "Marwa page already uses the new song"
+            echo "Latest song already active"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add marwa.html
-          git commit -m "Replace Marwa graduation song with new version"
+          git commit -m "Replace Marwa song with latest uploaded version"
           git push origin HEAD:marwa-graduation-2026

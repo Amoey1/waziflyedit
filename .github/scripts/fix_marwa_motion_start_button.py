@@ -6,8 +6,10 @@ s = p.read_text(encoding='utf-8')
 # Keep the start button permanently safe.
 marker = '/* MARWA-CONTROL-VISIBILITY-FIX */'
 if marker not in s:
-    fix = marker + '#startJourney{opacity:1!important;visibility:visible!important;pointer-events:auto!important}.scene.on .ans{visibility:visible!important}.scene.on .btn:not(.hide){visibility:visible!important}'
+    fix = marker + '#startJourney{opacity:1!important;visibility:visible!important;pointer-events:auto!important}.scene.on .ans{opacity:1!important;visibility:visible!important}.scene.on .btn:not(.hide){visibility:visible!important}'
     s = s.replace('</style>', fix + '</style>', 1)
+else:
+    s = s.replace('.scene.on .ans{visibility:visible!important}', '.scene.on .ans{opacity:1!important;visibility:visible!important}')
 
 # Interactive controls must never retain the generic motion-item class,
 # because that class starts at opacity:0 and can conflict with click/feedback animations.
@@ -32,5 +34,11 @@ replacement = "setTimeout(()=>{const start=$('startJourney');if(start){start.cla
 if needle in s:
     s = s.replace(needle, replacement, 1)
 
+# Sanity check: page 2 must contain all four answers before publishing.
+for label in ['<b>A</b>مروى 🎓','<b>B</b>مروى طبعًا','<b>C</b>أكيد مروى','<b>D</b>أنا ما أعرف مروى 😭']:
+    if label not in s:
+        raise SystemExit(f'Missing page 2 answer: {label}')
+
 p.write_text(s, encoding='utf-8')
-print('Ensured all Marwa motion controls stay visible')
+Path('marwa-motion-fixed.html').write_text(s, encoding='utf-8')
+print('Ensured controls stay visible and published fresh cache-busting copy')

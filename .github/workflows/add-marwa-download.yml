@@ -14,16 +14,16 @@ jobs:
           ref: marwa-graduation-2026
       - name: Build motion page
         run: python .github/scripts/build_marwa_motion.py
-      - name: Ensure start button is visible
+      - name: Ensure controls are visible and publish fresh copy
         run: python .github/scripts/fix_marwa_motion_start_button.py
-      - name: Commit motion page
+      - name: Commit motion pages
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add marwa-motion.html
+          git add marwa-motion.html marwa-motion-fixed.html
           if git diff --cached --quiet; then
             echo "No changes needed"
             exit 0
           fi
-          git commit -m "Fix Marwa motion start button visibility"
+          git commit -m "Publish fixed Marwa motion copy with all answers visible"
           git push origin HEAD:marwa-graduation-2026

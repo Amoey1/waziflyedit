@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Make analysis wait for user
+      - name: Force manual analysis gate
         shell: bash
         run: |
           python - <<'PY'
@@ -22,38 +22,54 @@ jobs:
           p = Path('marwa.html')
           s = p.read_text(encoding='utf-8')
 
-          # Preserve current latest song and opening text.
-          s = s.replace('https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3', 'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3')
+          # Keep current content choices intact.
           s = s.replace('رحلة خاصة جدًا • لمروى فقط 🤍', 'رحلة خاصة جدًا • لمروى 🤍')
+          s = s.replace('https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3', 'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3')
 
-          old_result = '<div class="analysis-result" id="analysisResult"><div>النظام تعب هو كمان من كمية الضغط اللي تحملتيه 😂</div><div style="margin-top:7px"><b>النتيجة: تستحقين التخرج رسميًا ✅</b></div></div>'
-          new_result = '<div class="analysis-result" id="analysisResult"><div>النظام تعب هو كمان من كمية الضغط اللي تحملتيه 😂</div><div style="margin-top:7px"><b>النتيجة: تستحقين التخرج رسميًا ✅</b></div><button class="btn gold analysis-continue" id="analysisContinue" onclick="finishStudyAnalysis()">كمّلي الرحلة 👀</button></div>'
-          if old_result in s:
-              s = s.replace(old_result, new_result, 1)
+          # Make the button text explicit and highly visible.
+          s = re.sub(
+              r'<button class="btn gold analysis-continue" id="analysisContinue" onclick="finishStudyAnalysis\(\)">.*?</button>',
+              '<button class="btn gold analysis-continue" id="analysisContinue" onclick="finishStudyAnalysis()">اضغطي هنا عشان نكمّل 👀</button>',
+              s,
+              count=1
+          )
 
-          if '.analysis-continue{' not in s:
-              css = '.analysis-continue{margin-top:16px;transform-origin:center;animation:analysisPop .5s .25s both}@keyframes analysisPop{0%{opacity:0;transform:scale(.72) translateY(8px)}70%{opacity:1;transform:scale(1.06) translateY(0)}100%{opacity:1;transform:scale(1)}}'
-              s = s.replace('</style>', css + '</style>', 1)
+          # Stronger pop + pulse animation.
+          s = re.sub(
+              r'\.analysis-continue\{[^}]*\}',
+              '.analysis-continue{margin-top:18px;transform-origin:center;animation:analysisPop .55s .18s both,analysisPulse 1.7s .85s ease-in-out infinite;box-shadow:0 0 0 0 rgba(210,184,109,.35)}',
+              s,
+              count=1
+          )
+          if '@keyframes analysisPulse' not in s:
+              s = s.replace('</style>', '@keyframes analysisPulse{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(210,184,109,.28)}50%{transform:scale(1.035);box-shadow:0 0 0 12px rgba(210,184,109,0)}}</style>', 1)
 
-          new_js = '''function studyAnalysis(){const o=$('studyAnalysisOverlay'),pct=$('analysisPercent'),fill=$('analysisFill'),st=$('analysisStatus'),res=$('analysisResult'),btn=$('analysisContinue');o.classList.add('show');o.setAttribute('aria-hidden','false');res.classList.remove('show');if(btn){btn.disabled=false;btn.textContent='كمّلي الرحلة 👀'}const steps=[{p:12,t:'فتح ملفات الرحلة...'}, {p:46,t:'حساب عدد مرات «خلاص… أنا تعبت» 😂'}, {p:87,t:'فحص مستوى الصبر والتحمّل...'}, {p:99,t:'لحظة… النظام يحاول يستوعب كل هذا 👀'}];let i=0;function run(){const x=steps[i];pct.textContent=x.p+'%';fill.style.width=x.p+'%';st.textContent=x.t;if(i<steps.length-1){i++;setTimeout(run,780)}else{setTimeout(()=>{st.textContent='اكتمل التحليل تقريبًا…';res.classList.add('show');hearts(6)},1350)}}requestAnimationFrame(()=>{fill.style.width='12%';run()})}function finishStudyAnalysis(){const o=$('studyAnalysisOverlay'),pct=$('analysisPercent'),fill=$('analysisFill'),st=$('analysisStatus'),btn=$('analysisContinue');if(btn){btn.disabled=true;btn.textContent='تم الاعتماد ✅'}fill.style.width='100%';pct.textContent='100%';st.textContent='تم اعتماد النتيجة 🎓';hearts(5);setTimeout(()=>{o.classList.remove('show');o.setAttribute('aria-hidden','true');go(4)},850)}'''
+          # Absolutely no transition to scene 4 from studyAnalysis itself.
+          manual_js = '''function studyAnalysis(){const o=$('studyAnalysisOverlay'),pct=$('analysisPercent'),fill=$('analysisFill'),st=$('analysisStatus'),res=$('analysisResult'),btn=$('analysisContinue');o.classList.add('show');o.setAttribute('aria-hidden','false');res.classList.remove('show');if(btn){btn.disabled=false;btn.textContent='اضغطي هنا عشان نكمّل 👀'}const steps=[{p:12,t:'فتح ملفات الرحلة...'},{p:46,t:'حساب عدد مرات «خلاص… أنا تعبت» 😂'},{p:87,t:'فحص مستوى الصبر والتحمّل...'},{p:99,t:'لحظة… النظام يحاول يستوعب كل هذا 👀'}];let i=0;function run(){const x=steps[i];pct.textContent=x.p+'%';fill.style.width=x.p+'%';st.textContent=x.t;if(i<steps.length-1){i++;setTimeout(run,780);return}setTimeout(()=>{st.textContent='خذي وقتك واقرئي النتيجة 👇';res.classList.add('show');hearts(6)},1350)}requestAnimationFrame(()=>{fill.style.width='12%';run()})}function finishStudyAnalysis(){const o=$('studyAnalysisOverlay');o.classList.remove('show');o.setAttribute('aria-hidden','true');go(4)}'''
 
           pattern = r"function studyAnalysis\(\)\{.*?\}function q4\("
-          if re.search(pattern, s, flags=re.S):
-              s = re.sub(pattern, new_js + 'function q4(', s, count=1, flags=re.S)
-          else:
-              raise SystemExit('studyAnalysis function not found')
+          if not re.search(pattern, s, flags=re.S):
+              raise SystemExit('studyAnalysis block not found')
+          s = re.sub(pattern, manual_js + 'function q4(', s, count=1, flags=re.S)
+
+          # Safety check: no go(4) is allowed inside studyAnalysis.
+          block = s.split('function studyAnalysis(){',1)[1].split('function finishStudyAnalysis(){',1)[0]
+          if 'go(4)' in block:
+              raise SystemExit('Safety check failed: automatic go(4) still present in studyAnalysis')
 
           p.write_text(s, encoding='utf-8')
+          # Publish under a fresh filename to defeat htmlpreview/browser caching.
+          Path('marwa-fresh.html').write_text(s, encoding='utf-8')
           PY
-      - name: Commit Marwa page update
+      - name: Commit fresh manual-gate page
         shell: bash
         run: |
-          if git diff --quiet -- marwa.html; then
-            echo "Analysis already waits for user"
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add marwa.html
-          git commit -m "Make study analysis wait for Marwa before stage 4"
+          git add marwa.html marwa-fresh.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Require Marwa to press continue after study analysis"
           git push origin HEAD:marwa-graduation-2026

@@ -11,6 +11,11 @@ if marker not in s:
 else:
     s = s.replace('.scene.on .ans{visibility:visible!important}', '.scene.on .ans{opacity:1!important;visibility:visible!important}')
 
+# Make the progress counter read visually as 02 / 08 inside the RTL page.
+counter_fix = '/* MARWA-COUNTER-DIRECTION-FIX */.count{direction:ltr!important;unicode-bidi:isolate!important;text-align:left}'
+if '/* MARWA-COUNTER-DIRECTION-FIX */' not in s:
+    s = s.replace('</style>', counter_fix + '</style>', 1)
+
 # Interactive controls must never retain the generic motion-item class,
 # because that class starts at opacity:0 and can conflict with click/feedback animations.
 old = "function addMotionItems(nodes,start=.08,step=.09){nodes.forEach((el,i)=>{el.classList.remove('motion-item');void el.offsetWidth;el.style.setProperty('--motion-delay',(start+i*step)+'s');el.classList.add('motion-item')})}"
@@ -34,11 +39,30 @@ replacement = "setTimeout(()=>{const start=$('startJourney');if(start){start.cla
 if needle in s:
     s = s.replace(needle, replacement, 1)
 
-# Sanity check: page 2 must contain all four answers before publishing.
+# Give page 7's introductory text one extra second before countdown starts.
+old_page7 = "function start7(){if(started)return;started=1;setTimeout(()=>{$('pre').classList.add('hide');$('cd').classList.remove('hide');let n=3;"
+new_page7 = "function start7(){if(started)return;started=1;setTimeout(()=>{$('pre').classList.add('hide');$('cd').classList.remove('hide');let n=3;"
+# The inner delay was 1700ms. With the existing 500ms entry delay, total reading time was ~2.2s.
+# Raise it to 2700ms so total reading time is ~3.2s.
+if old_page7 in s:
+    segment_start = s.index(old_page7)
+    segment_end = s.find('function openGift()', segment_start)
+    segment = s[segment_start:segment_end]
+    if '},1700)}' in segment:
+        segment = segment.replace('},1700)}', '},2700)}', 1)
+        s = s[:segment_start] + segment + s[segment_end:]
+    elif '},2700)}' not in segment:
+        raise SystemExit('Page 7 intro delay was not found')
+
+# Sanity checks before publishing.
 for label in ['<b>A</b>مروى 🎓','<b>B</b>مروى طبعًا','<b>C</b>أكيد مروى','<b>D</b>أنا ما أعرف مروى 😭']:
     if label not in s:
         raise SystemExit(f'Missing page 2 answer: {label}')
+if 'direction:ltr!important' not in s:
+    raise SystemExit('Counter direction fix missing')
+if '},2700)}function openGift()' not in s:
+    raise SystemExit('Page 7 timing fix missing')
 
 p.write_text(s, encoding='utf-8')
 Path('marwa-motion-fixed.html').write_text(s, encoding='utf-8')
-print('Ensured controls stay visible and published fresh cache-busting copy')
+print('Fixed counter direction and extended page 7 reading time')

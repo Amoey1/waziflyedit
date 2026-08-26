@@ -16,6 +16,8 @@ jobs:
         run: python .github/scripts/build_marwa_motion.py
       - name: Ensure controls are visible and publish fresh copy
         run: python .github/scripts/fix_marwa_motion_start_button.py
+      - name: Fix final congratulation glow visibility
+        run: python .github/scripts/fix_marwa_final_glow.py
       - name: Commit motion pages
         run: |
           git config user.name "github-actions[bot]"
@@ -25,5 +27,5 @@ jobs:
             echo "No changes needed"
             exit 0
           fi
-          git commit -m "Publish fixed Marwa motion copy with all answers visible"
+          git commit -m "Fix final Marwa congratulation glow visibility"
           git push origin HEAD:marwa-graduation-2026

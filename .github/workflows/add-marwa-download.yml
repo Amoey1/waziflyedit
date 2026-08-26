@@ -1,4 +1,4 @@
-name: Build Marwa motion version
+name: Fix Marwa main journey song
 on:
   push:
     branches:
@@ -6,28 +6,35 @@ on:
 permissions:
   contents: write
 jobs:
-  build:
+  fix:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Build motion page
-        run: python .github/scripts/build_marwa_motion.py
-      - name: Ensure controls are visible and publish fresh copy
-        run: python .github/scripts/fix_marwa_motion_start_button.py
-      - name: Fix final congratulation glow visibility
-        run: python .github/scripts/fix_marwa_final_glow.py
-      - name: Replace Marwa song only
-        run: python .github/scripts/replace_marwa_song.py
-      - name: Commit motion pages
+      - name: Replace song in marwa.html
+        shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add marwa-motion.html marwa-motion-fixed.html
-          if git diff --cached --quiet; then
-            echo "No changes needed"
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('marwa.html')
+          s = p.read_text(encoding='utf-8')
+          old = 'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3'
+          new = 'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3'
+          if old not in s and new not in s:
+              raise SystemExit('Expected Marwa song URL not found')
+          s = s.replace(old, new)
+          p.write_text(s, encoding='utf-8')
+          PY
+      - name: Commit fixed main page
+        shell: bash
+        run: |
+          if git diff --quiet -- marwa.html; then
+            echo "marwa.html already fixed"
             exit 0
           fi
-          git commit -m "Replace Marwa final song only"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add marwa.html
+          git commit -m "Fix Marwa main journey final song"
           git push origin HEAD:marwa-graduation-2026

@@ -12,29 +12,33 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Replace song in marwa.html
+      - name: Use repository MP3 in marwa.html
         shell: bash
         run: |
           python - <<'PY'
           from pathlib import Path
           p = Path('marwa.html')
           s = p.read_text(encoding='utf-8')
-          old = 'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3'
-          new = 'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3'
-          if old not in s and new not in s:
+          old_urls = [
+              'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3',
+              'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3',
+          ]
+          new = 'https://raw.githubusercontent.com/Amoey1/waziflyedit/marwa-graduation-2026/%D9%81%D8%B1%D8%AD%D8%A9%20%D8%A7%D9%84%D9%84%D9%8A%D9%84%D8%A9%20%282%29.mp3'
+          if not any(u in s for u in old_urls) and new not in s:
               raise SystemExit('Expected Marwa song URL not found')
-          s = s.replace(old, new)
+          for u in old_urls:
+              s = s.replace(u, new)
           p.write_text(s, encoding='utf-8')
           PY
       - name: Commit fixed main page
         shell: bash
         run: |
           if git diff --quiet -- marwa.html; then
-            echo "marwa.html already fixed"
+            echo "marwa.html already uses repository MP3"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add marwa.html
-          git commit -m "Fix Marwa main journey final song"
+          git commit -m "Use repository MP3 in Marwa journey"
           git push origin HEAD:marwa-graduation-2026

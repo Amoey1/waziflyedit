@@ -1,4 +1,4 @@
-name: Fix Marwa audio delivery
+name: Install locked Marwa final song
 on:
   push:
     branches:
@@ -6,45 +6,43 @@ on:
 permissions:
   contents: write
 jobs:
-  fix:
+  install:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           ref: marwa-graduation-2026
-      - name: Rename MP3 and update Marwa page
+      - name: Install exact approved MP3
         shell: bash
         run: |
-          set -e
-          if [ -f "فرحة الليلة (2).mp3" ] && [ ! -f "marwa-song.mp3" ]; then
-            git mv "فرحة الليلة (2).mp3" marwa-song.mp3
+          set -euo pipefail
+          EXPECTED_SHA="4db61894584cc885fb1b7c54dee8a0ce8dc1f98ba9a276d657c6021b7bae48a7"
+          FINAL="marwa-final-song.mp3"
+          if [ -f "$FINAL" ]; then
+            ACTUAL="$(sha256sum "$FINAL" | awk '{print $1}')"
+          else
+            ACTUAL=""
           fi
-          python - <<'PY'
-          from pathlib import Path
-          p = Path('marwa.html')
-          s = p.read_text(encoding='utf-8')
-          old_urls = [
-              'https://cdn1.suno.ai/de8cdd97-18b4-423f-87e3-da4d6dbd8667.mp3',
-              'https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3',
-              'https://raw.githubusercontent.com/Amoey1/waziflyedit/marwa-graduation-2026/%D9%81%D8%B1%D8%AD%D8%A9%20%D8%A7%D9%84%D9%84%D9%8A%D9%84%D8%A9%20%282%29.mp3',
-          ]
-          new = 'https://cdn.jsdelivr.net/gh/Amoey1/waziflyedit@marwa-graduation-2026/marwa-song.mp3'
-          for u in old_urls:
-              s = s.replace(u, new)
-          if new not in s:
-              raise SystemExit('Could not set Marwa audio URL')
-          p.write_text(s, encoding='utf-8')
-          PY
-      - name: Commit audio delivery fix
+          if [ "$ACTUAL" != "$EXPECTED_SHA" ]; then
+            curl -fL --retry 4 --retry-delay 2               "https://cdn1.suno.ai/5878b6d7-f65b-4fd2-87a3-d978e96fe324.mp3"               -o "$FINAL.tmp"
+            ACTUAL="$(sha256sum "$FINAL.tmp" | awk '{print $1}')"
+            if [ "$ACTUAL" != "$EXPECTED_SHA" ]; then
+              echo "Downloaded audio hash mismatch: $ACTUAL"
+              rm -f "$FINAL.tmp"
+              exit 1
+            fi
+            mv "$FINAL.tmp" "$FINAL"
+          fi
+          rm -f marwa-song.mp3 "فرحة الليلة (2).mp3"
+      - name: Commit exact locked MP3
         shell: bash
         run: |
-          if git diff --quiet; then
-            echo "No changes needed"
+          if git diff --quiet -- . && [ -z "$(git status --porcelain)" ]; then
+            echo "Exact final MP3 already installed"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add marwa.html marwa-song.mp3 "فرحة الليلة (2).mp3" 2>/dev/null || true
           git add -A
-          git commit -m "Fix Marwa audio playback on iPhone"
+          git commit -m "Install locked final Marwa song"
           git push origin HEAD:marwa-graduation-2026
